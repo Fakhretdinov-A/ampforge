@@ -1,0 +1,31 @@
+[project]
+name = "ampforge"
+version = "0.1.0"
+description = "AMPforge: conditional peptide language model for the AMP Challenge 2027"
+readme = "README.md"
+authors = [
+    { name = "Arthur Fakhretdinov", email = "artur09042004@gmail.com" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "levenshtein>=0.27",
+    "numpy>=2.0.2",
+    "rapidfuzz>=3.0",
+]
+
+[project.scripts]
+# The template repository names the entry point `generate`; the official starter kits
+# name the broad-spectrum one `generate_broad_spectrum`. Both are registered and both
+# resolve to the same function, which derives its output directory from the name it was
+# invoked under, so either contract produces a valid submission.
+generate = "ampforge.generate:main"
+generate_broad_spectrum = "ampforge.generate:main"
+
+[project.optional-dependencies]
+train = [
+    "torch>=2.8.0",
+]
+
+[build-system]
+requires = ["uv_build>=0.12.19,<0.13.0"]
+build-backend = "uv_build"

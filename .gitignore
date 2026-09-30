@@ -1,0 +1,14 @@
+# working output of the entry point; the submitted copy lives in submission/   # the challenge validator clones here
+generate/
+generate_broad_spectrum/
+submission/   # the challenge validator clones here
+
+# python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+
+# os
+.DS_Store
+.omc/
